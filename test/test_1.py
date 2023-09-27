@@ -3,8 +3,12 @@ class DesempenhoAcademico():
   # Método construtor
   def __init__(self, aluno):
     self.nomeAluno = aluno
+    self.notas = []
     self.media = 0
-    self.situacao = False
+    self.situacao = ""
+    
+  def AdicionarNotas(self, nota):
+    self.notas.append(nota)
 
   # Calcula a média
   def calcularMedia(self, nota1, nota2):
@@ -24,6 +28,9 @@ class DesempenhoAcademico():
       print(f"Aluno {self.nomeAluno} está em situação Aprovado")
     else:
       print(f"Aluno {self.nomeAluno} está em situação Reprovado")
+  
+  def ImprimirHistorico(self):
+    pass
 
 
 desempenho = DesempenhoAcademico('Natasha Pelizari')
