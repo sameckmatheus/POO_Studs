@@ -3,7 +3,7 @@ import pandas as pd
 
 class DesempenhoAcademico:
 
-    def __init__(self, aluno="Matheus Sameck", falta=10):
+    def __init__(self, aluno="Matheus Sameck", falta=5):
         """Inicializar os atributos da classe."""
         self.nome_aluno = aluno
         self.notas = np.array([])
@@ -24,14 +24,16 @@ class DesempenhoAcademico:
 
     def situacao_aluno(self):
         """Determinar a situação do aluno de acordo com a média e as faltas."""
-        if self.media >= 70 and self.falta <= 15:
-            self.situacao = "Aprovado"
-        elif 50 <= self.media < 70 and self.falta <= 15:
-            self.situacao = "Exame final"
-        elif self.media < 50 or self.falta > 15:
+        if self.media >= 7 and self.falta <= 15:
+            if self.media > 10:
+                self.situacao = "Informações inválidas"
+            else:
+                self.situacao = "Aprovado"
+        elif self.media >= 5:
+            if self.media <= 7 and self.falta <= 15:
+                self.situacao = "Exame final"
+        elif self.media < 5 or self.falta > 15:
             self.situacao = "Reprovado"
-        else:
-            self.situacao = "Informações inválidas"
         return self.situacao
 
     def imprimir_historico(self):
@@ -49,8 +51,11 @@ class DesempenhoAcademico:
 
 
 desempenho = DesempenhoAcademico()
-desempenho.adicionar_nota(9)
-desempenho.adicionar_nota(6)
+
+desempenho.adicionar_nota(10)
+desempenho.adicionar_nota(10)
+
 media_atual = desempenho.calcular_media()
 situacao_atual = desempenho.situacao_aluno()
+
 desempenho.imprimir_historico()
