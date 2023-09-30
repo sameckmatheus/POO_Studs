@@ -3,7 +3,7 @@ import pandas as pd
 
 class DesempenhoAcademico:
 
-    def __init__(self, aluno="Matheus Sameck", falta=5):
+    def __init__(self, aluno=(input('Digite seu nome: ')), falta=5):
         """Inicializar os atributos da classe."""
         self.nome_aluno = aluno
         self.notas = np.array([])
@@ -36,10 +36,13 @@ class DesempenhoAcademico:
             self.situacao = "Reprovado"
         return self.situacao
 
-    def imprimir_historico(self):
+    def imprimir_pontuacao(self):
         """Imprimir o histórico do aluno em um formato tabular."""
-        print("Histórico do Aluno:", self.nome_aluno)
-
+        print('\n'
+              '============================================')
+        print("Boletim Escolar")
+        print("Pontuação do Aluno:", self.nome_aluno)
+        print('============================================')
         df = pd.DataFrame({"Nota": self.notas})
         df["Número"] = df.index + 1
         df = df[["Número", "Nota"]]
@@ -48,14 +51,17 @@ class DesempenhoAcademico:
 
         print(f"Média: {self.media:.2f}")
         print(f"Situação: {self.situacao}")
+        print('============================================')
 
 
 desempenho = DesempenhoAcademico()
 
 desempenho.adicionar_nota(float(input('Digite a nota 1: ')))
 desempenho.adicionar_nota(float(input('Digite a nota 2: ')))
+desempenho.adicionar_nota(float(input('Digite a nota 3: ')))
+desempenho.adicionar_nota(float(input('Digite a nota 4: ')))
 
 media_atual = desempenho.calcular_media()
 situacao_atual = desempenho.situacao_aluno()
 
-desempenho.imprimir_historico()
+desempenho.imprimir_pontuacao()
