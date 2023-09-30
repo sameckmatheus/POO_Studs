@@ -52,8 +52,8 @@ class DesempenhoAcademico:
 
 desempenho = DesempenhoAcademico()
 
-desempenho.adicionar_nota(10)
-desempenho.adicionar_nota(10)
+desempenho.adicionar_nota(float(input('Digite a nota 1: ')))
+desempenho.adicionar_nota(float(input('Digite a nota 2: ')))
 
 media_atual = desempenho.calcular_media()
 situacao_atual = desempenho.situacao_aluno()
