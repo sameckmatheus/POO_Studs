@@ -3,7 +3,7 @@ import pandas as pd
 
 class DesempenhoAcademico:
 
-    def __init__(self, aluno=(input('Digite seu nome: ')), falta=5):
+    def __init__(self, aluno=input('Digite seu nome: '), falta=int(input('Digite a quantidade de faltas: '))):
         """Inicializar os atributos da classe."""
         self.nome_aluno = aluno
         self.notas = np.array([])
