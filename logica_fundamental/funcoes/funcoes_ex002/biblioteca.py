@@ -33,18 +33,3 @@ def multiplicar(n1, n2):
 def dividir(n1, n2):
     div = n1 / n2
     print(f'A divisão entre {n1} e {n2}, é: {div}')
-
-
-def imprimir(n1):
-    """
-    num = ' '
-    for i in range(1, n1 + 1):
-        num += str(i) + " "
-        print(num)
-    :param n1:
-    :return:
-    """
-    for i in range(1, n1 + 1):
-        for x in range(1, i + 1):
-            print(x, end=' ')
-        print()

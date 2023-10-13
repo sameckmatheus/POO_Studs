@@ -10,9 +10,3 @@ escolha_operacao = input('Informe a operação desejada '
                          '\nS: sair: ')
 
 menu(escolha_operacao, n1, n2)
-
-"""
-n1 = int(input('Digite um número: '))
-
-imprimir(n1)
-"""
